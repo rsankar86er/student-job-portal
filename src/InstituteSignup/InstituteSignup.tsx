@@ -1,7 +1,7 @@
-import { AppBar, Autocomplete, Avatar, Box, Button, Checkbox, Container, Divider, FormControlLabel, Grid, IconButton, Link, ListItemIcon, Menu, MenuItem, Stack, TextField, Toolbar, Tooltip, Typography } from '@mui/material';
+import { AppBar, Avatar, Box, Button, Checkbox, Container, Divider, FormControlLabel, Grid, IconButton, Link, ListItemIcon, Menu, MenuItem, Stack, TextField, Toolbar, Tooltip, Typography } from '@mui/material';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 
-function CandidateSignup (){
+function InstituteSignup (){
     const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
         const data = new FormData(event.currentTarget);
@@ -11,14 +11,6 @@ function CandidateSignup (){
         });
       };
     
-      const instituteList = [
-        { label: 'Anna university'},
-        { label: 'Vellore Institute Of Technology'},
-        { label: 'Loyola College'},
-        { label: 'SSN College Of Engineering'},
-        { label: 'Madras Christian College'},
-      ];
-
       return (
         <>
         <Divider component="hr" className='top-line' />
@@ -39,38 +31,18 @@ function CandidateSignup (){
                 <LockOutlinedIcon />
               </Avatar>
               <Typography component="h1" variant="h5">
-                Candidate Sign up
+                Institute Sign up
               </Typography>
               <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 3 }}>
                 <Grid container spacing={2}>
-                  <Grid item xs={12} sm={6}>
-                    <TextField
-                      autoComplete="given-name"
-                      name="firstName"
-                      required
-                      fullWidth
-                      id="firstName"
-                      label="First Name"
-                      autoFocus
-                    />
-                  </Grid>
-                  <Grid item xs={12} sm={6}>
+                    <Grid item xs={12}>
                     <TextField
                       required
                       fullWidth
-                      id="lastName"
-                      label="Last Name"
-                      name="lastName"
-                      autoComplete="family-name"
-                    />
-                  </Grid>
-                  <Grid item xs={12}>
-                    <Autocomplete
-                      disablePortal
                       id="institute"
-                      options={instituteList}
-                      fullWidth
-                      renderInput={(params) => <TextField required {...params} label="Institute" />}
+                      label="Institute Name"
+                      name="institute"
+                      autoComplete="institute"
                     />
                   </Grid>
                   <Grid item xs={12}>
@@ -111,7 +83,7 @@ function CandidateSignup (){
                 </Button>
                 <Grid container justifyContent="flex-end">
                   <Grid item>
-                    <Link href="/CandidateLogin" variant="body2">
+                    <Link href="/InstituteSignin" variant="body2">
                       Already have an account? Sign in
                     </Link>
                   </Grid>
@@ -122,4 +94,4 @@ function CandidateSignup (){
         </>
     )
 }
-export default CandidateSignup;
+export default InstituteSignup;

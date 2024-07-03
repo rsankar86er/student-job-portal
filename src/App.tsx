@@ -7,6 +7,8 @@ import LandingPage from './LandingPage/LandingPage';
 import Layout from './Layout/Layout';
 import CandidateLogin from './CandidateLogin/CandidateLogin';
 import CandidateSignup from './CandidateSignup/CandidateSignup';
+import InstituteSignin from './InstituteSignin/InstituteSignin';
+import InstituteSignup from './InstituteSignup/InstituteSignup';
 
 function App() {
   return (
@@ -18,6 +20,8 @@ function App() {
            <Route path="/" element={<LandingPage />} />
            <Route path="/CandidateLogin" element={<CandidateLogin />} />
            <Route path="/CandidateSignup" element={<CandidateSignup />} />
+           <Route path="/InstituteSignin" element={<InstituteSignin />} />
+           <Route path="/InstituteSignup" element={<InstituteSignup />} />
          </Route>
        </Routes>
      </BrowserRouter>

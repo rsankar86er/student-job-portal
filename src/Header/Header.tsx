@@ -6,6 +6,7 @@ import './Header.scss';
 function Header (){
     const navigate = useNavigate();
     const candidateClick = () => navigate('/CandidateLogin');
+    const instituteClick = () => navigate('/InstituteSignin');
 
     return (
         <Box sx={{ m:2, display: 'flex', justifyContent:'space-between'}}>
@@ -30,7 +31,7 @@ function Header (){
             <Box sx={{ display:'flex', alignItems:'center'}}>
                 <Button variant="contained" size="small" sx={{height:40, mr:1}} onClick={candidateClick}>Candidate</Button>
                 <Button variant="contained" size="small" sx={{height:40, mr:1}}>Employers</Button>
-                <Button variant="contained" size="small" sx={{height:40}}>Institute</Button>
+                <Button variant="contained" size="small" sx={{height:40}} onClick={instituteClick}>Institute</Button>
             </Box>
         </Box>
     )
