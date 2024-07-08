@@ -1,8 +1,5 @@
-import { AppBar, Avatar,Input, Box, Divider, IconButton, ListItemIcon, Menu, MenuItem, Stack, Toolbar, Tooltip, Typography, Paper, InputBase, Button } from '@mui/material';
+import {Box, Divider, Typography, Paper, InputBase, Button } from '@mui/material';
 import './HeroBanner.scss';
-import MenuIcon from '@mui/icons-material/Menu';
-import SearchIcon from '@mui/icons-material/Search';
-import DirectionsIcon from '@mui/icons-material/Directions';
 
 function HeroBanner (){
     return (

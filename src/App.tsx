@@ -3,15 +3,18 @@ import CssBaseline from '@mui/material/CssBaseline';
 import { ThemeProvider } from '@mui/material/styles';
 import darkTheme from './theme';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import LandingPage from './LandingPage/LandingPage';
-import Layout from './Layout/Layout';
-import CandidateLogin from './CandidateLogin/CandidateLogin';
-import CandidateSignup from './CandidateSignup/CandidateSignup';
-import InstituteSignin from './InstituteSignin/InstituteSignin';
-import InstituteSignup from './InstituteSignup/InstituteSignup';
+import LandingPage from './Pages/LandingPage/LandingPage';
+import Layout from './Pages/Layout/Layout';
+import CandidateLogin from './Pages/CandidateLogin/CandidateLogin';
+import CandidateSignup from './Pages/CandidateSignup/CandidateSignup';
+import InstituteSignin from './Pages/InstituteSignin/InstituteSignin';
+import InstituteSignup from './Pages/InstituteSignup/InstituteSignup';
+import { Provider } from 'react-redux';
+import { store } from './Redux/Store';
 
 function App() {
   return (
+    <Provider store={store}>
     <ThemeProvider theme={darkTheme}>
       <CssBaseline />
       <BrowserRouter>
@@ -26,6 +29,7 @@ function App() {
        </Routes>
      </BrowserRouter>
     </ThemeProvider>
+    </Provider>
   );
 }
 

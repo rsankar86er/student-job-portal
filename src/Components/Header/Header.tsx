@@ -1,15 +1,30 @@
-import { AppBar, Avatar, Box, Button, Divider, IconButton, ListItemIcon, Menu, MenuItem, Stack, Toolbar, Tooltip, Typography } from '@mui/material';
-import logo from '../assets/img/logo.png';
+import { Box, Button, Divider, MenuItem, Typography } from '@mui/material';
+import logo from '../../assets/img/logo.png';
 import { Link, useNavigate } from 'react-router-dom';
 import './Header.scss';
+import AlertWrapper from "../Alert/Alert";
+import { useSelector } from 'react-redux';
+import { useEffect } from 'react';
 
 function Header (){
     const navigate = useNavigate();
+
     const candidateClick = () => navigate('/CandidateLogin');
     const instituteClick = () => navigate('/InstituteSignin');
 
+    const alert = useSelector((state:any)=>state.createInstitute.alert);
+    const alertmessage = useSelector((state:any)=>state.createInstitute.alertmessage);
+    const alerttype = useSelector((state:any)=>state.createInstitute.alerttype);
+
+    console.log(alert, alertmessage, alerttype);
+    
+    useEffect(()=>{
+        alert && navigate('/InstituteSignin');
+    },[alert, navigate]);
+
     return (
         <Box sx={{ m:2, display: 'flex', justifyContent:'space-between'}}>
+            {alert && <AlertWrapper alertmessage={alertmessage} alerttype={alerttype}></AlertWrapper>}
             <Box sx={{ display:'flex', alignItems:'center'}}>
                 <Link to={'/'}><img src={logo}/></Link>
                 <Divider sx={{ height: 28, m: 0.5, mx:3 }} orientation="vertical" />

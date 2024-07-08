@@ -19,6 +19,22 @@ function CandidateSignup (){
         { label: 'Madras Christian College'},
       ];
 
+      const degreeList = [
+        { label: 'B.Tech'},
+        { label: 'B.E'},
+        { label: 'B.Sc'},
+        { label: 'B.Com'},
+        { label: 'B.A'},
+      ];
+
+      const departmentList = [
+        { label: 'Information Technology'},
+        { label: 'Computer Science Engineering'},
+        { label: 'Electronics and Communication Engineering'},
+        { label: 'Electrical and Electronics Engineering'},
+        { label: 'Electronics and Instrumentation Engineering'},
+      ];
+
       return (
         <>
         <Divider component="hr" className='top-line' />
@@ -71,6 +87,24 @@ function CandidateSignup (){
                       options={instituteList}
                       fullWidth
                       renderInput={(params) => <TextField required {...params} label="Institute" />}
+                    />
+                  </Grid>
+                  <Grid item xs={12}>
+                    <Autocomplete
+                      disablePortal
+                      id="degree"
+                      options={degreeList}
+                      fullWidth
+                      renderInput={(params) => <TextField required {...params} label="Degree" />}
+                    />
+                  </Grid>
+                  <Grid item xs={12}>
+                    <Autocomplete
+                      disablePortal
+                      id="department"
+                      options={departmentList}
+                      fullWidth
+                      renderInput={(params) => <TextField required {...params} label="Department" />}
                     />
                   </Grid>
                   <Grid item xs={12}>
