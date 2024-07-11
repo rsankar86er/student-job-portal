@@ -23,6 +23,7 @@ function Header (){
     },[alert, navigate]);
 
     return (
+        <>
         <Box sx={{ m:2, display: 'flex', justifyContent:'space-between'}}>
             {alert && <AlertWrapper alertmessage={alertmessage} alerttype={alerttype}></AlertWrapper>}
             <Box sx={{ display:'flex', alignItems:'center'}}>
@@ -33,7 +34,7 @@ function Header (){
                         <Link to={'/'}><Typography variant="body1" color="text.primary">Home</Typography></Link>
                     </MenuItem>
                     <MenuItem sx={{display:'flex'}}>
-                        <Typography variant="body1" color="text.primary">Find a job</Typography>
+                        <Link to={'/JobListing'}><Typography variant="body1" color="text.primary">Find a job</Typography></Link>
                     </MenuItem>
                     <MenuItem>
                         <Typography variant="body1" color="text.primary">About</Typography>
@@ -49,6 +50,8 @@ function Header (){
                 <Button variant="contained" size="small" sx={{height:40}} onClick={instituteClick}>Institute</Button>
             </Box>
         </Box>
+        <Divider component="hr" className='top-line' />
+        </>
     )
 }
 export default Header;

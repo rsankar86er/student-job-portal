@@ -11,6 +11,8 @@ import InstituteSignin from './Pages/InstituteSignin/InstituteSignin';
 import InstituteSignup from './Pages/InstituteSignup/InstituteSignup';
 import { Provider } from 'react-redux';
 import { store } from './Redux/Store';
+import InstituteProfile from './Pages/InstituteProfile/InstituteProfile';
+import JobListing from './Pages/JobListing/JobListing';
 
 function App() {
   return (
@@ -25,6 +27,8 @@ function App() {
            <Route path="/CandidateSignup" element={<CandidateSignup />} />
            <Route path="/InstituteSignin" element={<InstituteSignin />} />
            <Route path="/InstituteSignup" element={<InstituteSignup />} />
+           <Route path="/InstituteProfile" element={<InstituteProfile />} />
+           <Route path="/JobListing" element={<JobListing />} />
          </Route>
        </Routes>
      </BrowserRouter>

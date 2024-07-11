@@ -36,7 +36,6 @@ function InstituteSignup (){
 
       return (
         <>
-        <Divider component="hr" className='top-line' />
           <Container component="main" maxWidth="xs">
             <Box
               sx={{

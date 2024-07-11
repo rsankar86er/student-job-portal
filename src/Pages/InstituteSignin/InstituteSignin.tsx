@@ -1,7 +1,9 @@
 import { AppBar, Avatar, Box, Button, Checkbox, Container, Divider, FormControlLabel, Grid, IconButton, Link, ListItemIcon, Menu, MenuItem, Stack, TextField, Toolbar, Tooltip, Typography } from '@mui/material';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
+import { useNavigate } from 'react-router-dom';
 
 function InstituteSignin (){
+    const navigate = useNavigate();
     const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
         const data = new FormData(event.currentTarget);
@@ -10,9 +12,13 @@ function InstituteSignin (){
           password: data.get('password'),
         });
       };
+
+      const handleClick = () => {
+        navigate('/InstituteProfile');
+      };
+      
     return (
             <>
-                <Divider component="hr" className='top-line' />
                 <Container component="main" maxWidth="xs">
         <Box
           sx={{
@@ -62,6 +68,7 @@ function InstituteSignin (){
               fullWidth
               variant="contained"
               sx={{ mt: 3, mb: 2 }}
+              onClick={handleClick}
             >
               Sign In
             </Button>
